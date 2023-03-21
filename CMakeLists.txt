@@ -2,6 +2,10 @@ cmake_minimum_required(VERSION 3.5.2 FATAL_ERROR)
 
 project(SimpleApp LANGUAGES CXX)
 
+
+#Set & cache variable version number, Change global QT version number here
+set(QT_MAJOR_VERSION_REQUIRED 6 CACHE STRING "QT Major version variable")
+
 # Download build system
 if(DEFINED ENV{CMAKESPARK})
     list(APPEND CMAKE_MODULE_PATH "$ENV{CMAKESPARK}")
@@ -24,6 +28,6 @@ include(CommonConfig)
 
 #include required libraries and include directories
 find_package(CC2SimpleLib REQUIRED)
-find_package(Qt5Core REQUIRED)
+find_package(Qt${QT_MAJOR_VERSION_REQUIRED}Core REQUIRED)
 
 add_subdirectory(src)

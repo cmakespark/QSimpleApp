@@ -10,4 +10,4 @@ createapp(NAME QSimpleApp
     CONSOLE
     SOURCES ${SOURCES}
     HEADERS ${HEADERS}
-    DEPS CC2::SimpleLib Qt5::Core)
+    DEPS CC2::SimpleLib Qt${QT_MAJOR_VERSION_REQUIRED}::Core)
